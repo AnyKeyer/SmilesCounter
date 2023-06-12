@@ -5,7 +5,7 @@ import { ChatClient } from '@twurple/chat';
 import { promises as fs } from 'fs';
 import { WebSocketServer } from 'ws';
 import express from 'express';
-
+import path from 'path';
 const wss = new WebSocketServer({ port: 8080 });
 
 const app = express()
@@ -81,3 +81,4 @@ function incrementCounter(key) {
 	  streamSmiles.set(`https://static-cdn.jtvnw.net/emoticons/v2/${key}/static/dark/3.0`, 1);
 	}
 }
+module.exports = app;
