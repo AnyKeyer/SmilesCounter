@@ -14,7 +14,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "build": "node index.js"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC"
