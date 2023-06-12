@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+    <script src="./web.js"></script>
+    <script defer src="./helper.js"></script>
+    <link rel="stylesheet" href="./main.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <my-component class="smiles" :smiles="smiles"></my-component>
+      </div>
+  
+      <script>
+        Vue.component('my-component', {
+          props: ['smiles'],
+          template: `
+            <div>
+              <div class="smile" v-for="smile in smiles" :key="smile.name">
+                <img :src="smile.name" alt="Smile Image">
+                <p class="value">{{ smile.value }}</p>
+              </div>
+            </div>
+          `
+        });
+  
+        new Vue({
+          el: '#app',
+          data: {
+            smiles:smilesArray
+          },
+          mounted() {
+            // Simulating dynamic update of the 'smiles' array
+            update(this);
+          }
+        });
+        function update(ob){
+            setTimeout(() => {
+              ob.smiles = smilesArray;
+            update(ob)
+            }, 1000);
+        }
+        </script>
+
+    <!-- <img src="https://static-cdn.jtvnw.net/emoticons/v2/emotesv2_8c40cd16027f48c0a70ac7b1fa1c397e/static/dark/3.0" alt=""> -->
+</body>
+
+</html>

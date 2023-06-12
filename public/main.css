@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "BEE";
+    src: url(./HoneycombHappiness-ywnRm.ttf);
+  }
+.smiles{
+    display: flex;
+    flex-wrap: wrap;
+}
+.smile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.value{
+    font-family: "BEE";
+    font-size: 50px;
+    padding: 20px;
+    color: rgb(211, 211, 0);
+}
