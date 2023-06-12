@@ -9,11 +9,11 @@ import express from 'express';
 const wss = new WebSocketServer({ port: 8080 });
 
 const app = express()
-const port = 3000
+app.get('/', (req, res) => {
+    res.sendFile('index.html', {root: path.join(__dirname, 'public')});
+})
 app.use(express.static('public'));
-app.listen(port, () => {
-	console.log(`Example app listening on port ${port}`)
-  });
+app.listen(process.env.PORT || 3000);
 
 var streamSmiles = new Map();
 
