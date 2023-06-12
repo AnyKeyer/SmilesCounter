@@ -18,7 +18,7 @@ app.listen(port, () => {
 var streamSmiles = new Map();
 
 wss.on('connection', function connection(ws) {
-  ws.on('message', function message(data) {
+  ws.on('message', function message(data) {	
     console.log('received: %s', data);
   });
   sendwsData(ws);

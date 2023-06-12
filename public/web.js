@@ -1,4 +1,4 @@
-webSocket = new WebSocket("ws://localhost:8080");
+webSocket = new WebSocket("ws://smiles-counter.vercel.app:8080");
 
 var smilesArray = [];
 webSocket.onopen = (event) => {
