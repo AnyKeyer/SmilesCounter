@@ -10,7 +10,7 @@ const wss = new WebSocketServer({ port: 8080 });
 
 const app = express()
 app.get('/', (req, res) => {
-    res.sendFile('index.html', {root: path.join(__dirname, 'public')});
+    res.sendFile('index.html', {root: "./public"});
 })
 app.use(express.static('public'));
 app.listen(process.env.PORT || 3000);
@@ -81,4 +81,3 @@ function incrementCounter(key) {
 	  streamSmiles.set(`https://static-cdn.jtvnw.net/emoticons/v2/${key}/static/dark/3.0`, 1);
 	}
 }
-module.exports = app;
